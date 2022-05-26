@@ -1,0 +1,67 @@
+MySQL:
+  enabled: false
+  host: 'localhost'
+  database: 'db'
+  username: 'user'
+  password: 'pass'
+  port: 3306
+
+Settings:
+  command: market
+  aliases: [mercado]
+  save-interval: 600 # segundos
+  # a cada quantos segundos o plugin irá verificar
+  # os itens que expiraram.
+  check-interval: 30 # segundos
+  sale-duration: 43200 # segundos
+  date-format: 'dd/MM/yyyy HH:mm'
+
+Messages:
+  new-sale: '&6&lVoltz&f&lMC &8&l➜ &7O jogador &f{player} &7está vendendo o item &f{item} &7por {price}&7! &8(/mercado)'
+  bought-item-everyone: '&6&lVoltz&f&lMC &8&l➜ &7O jogador &f{buyer} &7comprou o item &f{item} &7por {price}&7! &8(/mercado)'
+  bought-item-player: '&6&lVoltz&f&lMC &8&l➜ &7Item &fadquirido &7com &fsucesso&7! Você pode &fcoletá-lo &7em seus &fitens &7do &fmercado&7. &8(/mercado)'
+  need-item-in-hand: '&6&lVoltz&f&lMC &8&l➜ &cVocê precisa estar segurando um item!'
+  invalid-sale: '&6&lVoltz&f&lMC &8&l➜ &cEsse item não está mais disponível!'
+  invalid-amount: '&6&lVoltz&f&lMC &8&l➜ &cA quantia informada é inválida!'
+  insufficient-currency: '&6&lVoltz&f&lMC &8&l➜ &cVocê não possui essa quantia! ({has}/{need})'
+  item-not-found: '&6&lVoltz&f&lMC &8&l➜ &cO item selecionado não está mais no seu inventário!'
+  expired-item: '&6&lVoltz&f&lMC &8&l➜ &7A sua venda do item &f{item} &7expirou! O item já está disponível para coleta. &8(/mercado)'
+  choose-price:
+    - '&6&lVoltz&f&lMC &8&l➜ &7Digite no chat o preço do item!'
+    - '&6&lVoltz&f&lMC &8&l➜ &7Lembre-se que você pode usar números formatados! Exemplos: &f100k&7, &f1M&7.'
+    - ''
+    - ' &8▶ &7Item: &f{item}'
+    - ' &8▶ &7Moeda: {currency}'
+    - ''
+
+Next-Page:
+  type: ARROW
+  name: '&aPróxima Página'
+
+Previous-Page:
+  type: ARROW
+  name: '&cPágina Anterior'
+
+Time-Formatter:
+  second: '&7segundo&f'
+  seconds: '&7segundos&f'
+  minute: '&7minuto&f'
+  minutes: '&7minutos&f'
+  hour: '&7hora&f'
+  hours: '&7horas&f'
+  day: '&7dia&f'
+  days: '&7dias&f'
+  now: '&cExpirado'
+
+Number-Formatter:
+  - 'k'
+  - 'M'
+  - 'B'
+  - 'T'
+  - 'Q'
+  - 'QQ'
+  - 'S'
+  - 'SS'
+  - 'O'
+  - 'N'
+  - 'D'
