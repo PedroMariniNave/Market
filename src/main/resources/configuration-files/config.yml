@@ -15,8 +15,10 @@ Settings:
   check-interval: 30 # segundos
   sale-duration: 43200 # segundos
   date-format: 'dd/MM/yyyy HH:mm'
+  max-price: 1000000000000000
 
 Messages:
+  over-max-price: '&6&lVoltz&f&lMC &8&l➜ &cO valor inserido é muito alto!'
   new-sale: '&6&lVoltz&f&lMC &8&l➜ &7O jogador &f{player} &7está vendendo o item &f{item} &7por {price}&7! &8(/mercado)'
   bought-item-everyone: '&6&lVoltz&f&lMC &8&l➜ &7O jogador &f{buyer} &7comprou o item &f{item} &7por {price}&7! &8(/mercado)'
   bought-item-player: '&6&lVoltz&f&lMC &8&l➜ &7Item &fadquirido &7com &fsucesso&7! Você pode &fcoletá-lo &7em seus &fitens &7do &fmercado&7. &8(/mercado)'

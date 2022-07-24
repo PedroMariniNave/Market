@@ -1,7 +1,7 @@
 package com.zpedroo.market.hooks;
 
 import com.zpedroo.market.managers.DataManager;
-import com.zpedroo.multieconomy.utils.formatter.NumberFormatter;
+import com.zpedroo.market.utils.config.NumberFormatter;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
@@ -34,7 +34,7 @@ public class PlaceholderAPIHook extends PlaceholderExpansion {
     public String onPlaceholderRequest(Player player, String identifier) {
         switch (identifier.toUpperCase()) {
             case "ITEMS_AMOUNT":
-                return NumberFormatter.getInstance().formatDecimal(DataManager.getInstance().getSellingItemsAmount());
+                return NumberFormatter.getInstance().formatThousand(DataManager.getInstance().getSellingItemsAmount());
             default:
                 return null;
         }

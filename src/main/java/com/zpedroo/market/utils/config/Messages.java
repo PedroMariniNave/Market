@@ -6,7 +6,11 @@ import org.bukkit.ChatColor;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.zpedroo.market.utils.color.Colorize.getColored;
+
 public class Messages {
+
+    public static final String OVER_MAX_PRICE = getColored(FileUtils.get().getString(FileUtils.Files.CONFIG, "Messages.over-max-price"));
 
     public static final String NEW_SALE = getColored(FileUtils.get().getString(FileUtils.Files.CONFIG, "Messages.new-sale"));
 
@@ -27,17 +31,4 @@ public class Messages {
     public static final String EXPIRED_ITEM = getColored(FileUtils.get().getString(FileUtils.Files.CONFIG, "Messages.expired-item"));
 
     public static final List<String> CHOOSE_PRICE = getColored(FileUtils.get().getStringList(FileUtils.Files.CONFIG, "Messages.choose-price"));
-
-    private static List<String> getColored(List<String> strList) {
-        List<String> coloredList = new ArrayList<>(strList.size());
-        for (String str : strList) {
-            coloredList.add(getColored(str));
-        }
-
-        return coloredList;
-    }
-
-    private static String getColored(String str) {
-        return ChatColor.translateAlternateColorCodes('&', str);
-    }
 }

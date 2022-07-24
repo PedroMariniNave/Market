@@ -5,6 +5,7 @@ import com.zpedroo.market.managers.MarketManager;
 import com.zpedroo.market.objects.PreMarketItem;
 import com.zpedroo.market.utils.config.Messages;
 import com.zpedroo.market.utils.config.NumberFormatter;
+import com.zpedroo.market.utils.config.Settings;
 import com.zpedroo.market.utils.menu.Menus;
 import com.zpedroo.multieconomy.objects.general.Currency;
 import org.apache.commons.lang3.StringUtils;
@@ -33,8 +34,13 @@ public class PlayerChatListener implements Listener {
         Player player = event.getPlayer();
         PreMarketItem preMarketItem = playersSettingPrice.remove(player);
         BigInteger price = NumberFormatter.getInstance().filter(event.getMessage());
-        if (price.signum() < 0) {
+        if (price.signum() <= 0) {
             player.sendMessage(Messages.INVALID_AMOUNT);
+            return;
+        }
+
+        if (price.compareTo(Settings.MAX_PRICE) > 0) {
+            player.sendMessage(Messages.OVER_MAX_PRICE);
             return;
         }
 
